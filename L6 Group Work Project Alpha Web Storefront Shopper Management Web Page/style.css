@@ -1,0 +1,154 @@
+/* ==============================================
+   Team Code Catalysts: Shopper Management Storefront
+   IST 256, Section 001
+   Group Members: 
+   - Isaiah Ukih (HTML / Project Manager)
+   - Logan Kale VonGunden (CSS / Web Developer)
+   - Daniel Weeks (JavaScript / Documentation)
+   - Alexander Tysak (Additional Support)
+   Date: Fall 2025
+================================================= */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  color: #ffc107 !important; /* Highlight active page */
+}
+
+/* Hero Section */
+header {
+  background: #f1f3f5;
+  padding: 80px 20px;
+  text-align: center;
+  border-bottom: 1px solid #dee2e6;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p.lead {
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+header .btn {
+  font-size: 1.2rem;
+  padding: 10px 25px;
+}
+
+/* Featured Products */
+.card {
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.card-text {
+  color: #333;
+  font-weight: 500;
+}
+
+.btn-success {
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-success:hover {
+  background-color: #28a745cc;
+}
+
+/* Footer */
+footer {
+  background: #2c3e50;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 40px;
+}
+
+footer p {
+  margin-bottom: 5px;
+}
+
+/* Sign-Up Form */
+form {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+form label {
+  font-weight: 600;
+}
+
+form button {
+  background: #007bff;
+  border: none;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+}
+
+form button:hover {
+  background: #0056b3;
+}
+
+/* JSON Output */
+#json-output {
+  white-space: pre-wrap;
+  background: #f1f1f1;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-family: monospace;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  header .btn {
+    font-size: 1rem;
+    padding: 8px 20px;
+  }
+  .card-title {
+    font-size: 1rem;
+  }
+}

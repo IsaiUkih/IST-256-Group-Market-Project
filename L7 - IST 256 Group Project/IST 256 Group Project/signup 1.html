@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Manager Sign Up | Code Catalysts Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Code Catalysts Store</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="homepage.html">Homepage</a></li>
+          <li class="nav-item"><a class="nav-link active" href="signup.html">Sign Up</a></li>
+          <li class="nav-item"><a class="nav-link" href="product.html">Product Management</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sign Up Form -->
+  <div class="container my-5">
+    <h2 class="mb-4 text-center">Product Manager Sign-Up</h2>
+
+    <form id="managerForm">
+      <div class="mb-3">
+        <label for="managerName" class="form-label">Full Name (required)</label>
+        <input type="text" id="managerName" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="managerEmail" class="form-label">Email Address (required)</label>
+        <input type="email" id="managerEmail" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="managerPhone" class="form-label">Phone Number (optional)</label>
+        <input type="tel" id="managerPhone" class="form-control" placeholder="123-456-7890">
+      </div>
+
+      <div class="mb-3">
+        <label for="managerPassword" class="form-label">Password (required)</label>
+        <input type="password" id="managerPassword" class="form-control" required>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </div>
+    </form>
+
+    <h3 class="mt-5">Product Manager JSON Data</h3>
+    <pre id="managerJSON">No managers registered yet.</pre>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center p-4 bg-dark text-light">
+    <p>&copy; 2025 Team Code Catalysts | IST 256 Project</p>
+    <p><strong>Group Members:</strong> Isaiah Ukih, Alexander Tysak, Logan Kale VonGunden, Daniel Weeks</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="productSignup.js"></script>
+</body>
+</html>

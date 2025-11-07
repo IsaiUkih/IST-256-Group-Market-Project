@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Management Home | Code Catalysts Store</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      transition: background-color 0.4s, color 0.4s;
+    }
+    .dark-mode {
+      background-color: #121212;
+      color: #f5f5f5;
+    }
+    .dark-mode .card {
+      background-color: #1e1e1e;
+      color: #f5f5f5;
+    }
+    .stats-card {
+      transition: transform 0.2s;
+    }
+    .stats-card:hover {
+      transform: translateY(-5px);
+    }
+	  
+	  header {
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.dark-mode header {
+  background-color: #1e1e1e !important;
+  color: #f5f5f5 !important;
+}
+
+.dark-mode header a.btn-primary {
+  background-color: #0d6efd;
+  color: white;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Code Catalysts Store</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="homepage.html">Homepage</a></li>
+          <li class="nav-item"><a class="nav-link" href="signup.html">Sign Up</a></li>
+          <li class="nav-item"><a class="nav-link active" href="homepage.html">Product Management</a></li>
+          <li class="nav-item">
+            <button id="themeToggle" class="btn btn-outline-light ms-3">🌙 Dark Mode</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="text-center p-5 bg-light">
+    <h1>Product Management Dashboard</h1>
+    <p class="lead">Manage your store products efficiently and professionally</p>
+    <a href="product.html" class="btn btn-primary btn-lg mt-3">Add / Update Product</a>
+  </header>
+
+  <!-- Stats Overview -->
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Store Overview</h2>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <div class="card stats-card shadow-sm p-4">
+          <h3>120+</h3>
+          <p>Active Products</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card stats-card shadow-sm p-4">
+          <h3>45</h3>
+          <p>Categories</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card stats-card shadow-sm p-4">
+          <h3>92%</h3>
+          <p>Stock Availability</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Links Section -->
+  <div class="container my-5">
+    <h2 class="mb-4 text-center">Quick Actions</h2>
+    <div class="row text-center">
+      <div class="col-md-4 mb-3">
+        <div class="card shadow-sm p-3">
+          <h5>Add New Product</h5>
+          <p>Create a new product entry in the store.</p>
+          <a href="product.html" class="btn btn-success">Go</a>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card shadow-sm p-3">
+          <h5>View Product List</h5>
+          <p>See all products currently in the store.</p>
+          <a href="product.html" class="btn btn-success">View</a>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card shadow-sm p-3">
+          <h5>Search Product</h5>
+          <p>Find a product quickly using its Product ID.</p>
+          <a href="product.html" class="btn btn-success">Search</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Products Section -->
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Recently Added Products</h2>
+
+    <input type="text" id="searchInput" class="form-control mb-3" placeholder="Search for a product...">
+
+<table class="table table-striped table-hover align-middle">
+  <thead class="table-dark">
+    <tr>
+      <th>Product ID</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price ($)</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody id="productTable">
+    <tr data-id="1001" data-name="Wireless Mouse" data-category="Accessories" data-price="25.99" data-img="wireless_mouse.png">
+      <td>1001</td><td>Wireless Mouse</td><td>Accessories</td><td>25.99</td>
+      <td><button class="btn btn-sm btn-primary view-btn">View Product</button></td>
+    </tr>
+    <tr data-id="1002" data-name="USB-C Charger" data-category="Electronics" data-price="19.99" data-img="usbc_charger.png">
+      <td>1002</td><td>USB-C Charger</td><td>Electronics</td><td>19.99</td>
+      <td><button class="btn btn-sm btn-primary view-btn">View Product</button></td>
+    </tr>
+    <tr data-id="1003" data-name="Bluetooth Headphones" data-category="Audio" data-price="49.99" data-img="bluetooth_headphones.png">
+      <td>1003</td><td>Bluetooth Headphones</td><td>Audio</td><td>49.99</td>
+      <td><button class="btn btn-sm btn-primary view-btn">View Product</button></td>
+    </tr>
+    <tr data-id="1004" data-name="Gaming Keyboard" data-category="Accessories" data-price="79.99" data-img="gaming_keyboard.png">
+      <td>1004</td><td>Gaming Keyboard</td><td>Accessories</td><td>79.99</td>
+      <td><button class="btn btn-sm btn-primary view-btn">View Product</button></td>
+    </tr>
+    <tr data-id="1005" data-name="4K Monitor 27&quot;" data-category="Electronics" data-price="299.99" data-img="27inchmonitor.png">
+      <td>1005</td><td>4K Monitor 27"</td><td>Electronics</td><td>299.99</td>
+      <td><button class="btn btn-sm btn-primary view-btn">View Product</button></td>
+    </tr>
+    <tr data-id="1006" data-name="Webcam Pro 1080p" data-category="Electronics" data-price="89.99" data-img="webcam.png">
+      <td>1006</td><td>Webcam Pro 1080p</td><td>Electronics</td><td>89.99</td>
+      <td><button class="btn btn-sm btn-primary view-btn">View Product</button></td>
+    </tr>
+    <tr data-id="1007" data-name="Laptop Stand" data-category="Office" data-price="34.99" data-img="laptop_stand.png">
+      <td>1007</td><td>Laptop Stand</td><td>Office</td><td>34.99</td>
+      <td><button class="btn btn-sm btn-primary view-btn">View Product</button></td>
+    </tr>
+    <tr data-id="1008" data-name="Ergonomic Chair" data-category="Office" data-price="159.99" data-img="office_chair.png">
+      <td>1008</td><td>Ergonomic Chair</td><td>Office</td><td>159.99</td>
+      <td><button class="btn btn-sm btn-primary view-btn">View Product</button></td>
+    </tr>
+    <tr data-id="1009" data-name="External Hard Drive 1TB" data-category="Storage" data-price="59.99" data-img="external_hard_drive.png">
+      <td>1009</td><td>External Hard Drive 1TB</td><td>Storage</td><td>59.99</td>
+      <td><button class="btn btn-sm btn-primary view-btn">View Product</button></td>
+    </tr>
+    <tr data-id="1010" data-name="Wireless Router AX5400" data-category="Networking" data-price="129.99" data-img="asus_router.png">
+      <td>1010</td><td>Wireless Router AX5400</td><td>Networking</td><td>129.99</td>
+      <td><button class="btn btn-sm btn-primary view-btn">View Product</button></td>
+    </tr>
+    <tr data-id="1011" data-name="Cisco Router" data-category="IT" data-price="170" data-img="cisco_router.png">
+      <td>1011</td><td>Cisco SRP541W 4-Port Wireless Router</td><td>Software</td><td>170</td>
+      <td><button class="btn btn-sm btn-primary view-btn">View Product</button></td>
+    </tr>
+    <tr data-id="1012" data-name="Cisco Switch" data-category="IT" data-price="270" data-img="cisco_switch.png">
+      <td>1012</td><td>Cisco Business 350 Switch</td><td>Networking</td><td>270</td>
+      <td><button class="btn btn-sm btn-primary view-btn">View Product</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title" id="productModalLabel">Product Details</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="modalImage" src="" alt="Product Image" class="img-fluid mb-3 rounded shadow-sm">
+        <h4 id="modalName"></h4>
+        <p class="text-muted mb-1" id="modalCategory"></p>
+        <h5 class="text-success">$<span id="modalPrice"></span></h5>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button class="btn btn-success btn-lg">Buy Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center p-4 bg-dark text-light">
+    <p>&copy; 2025 Team Code Catalysts | IST 256 Project</p>
+    <p><strong>Group Members:</strong> Isaiah Ukih, Alexander Tysak, Logan Kale VonGunden, Daniel Weeks</p>
+  </footer>
+
+  <!-- JS Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Dark Mode Toggle
+    const themeToggle = document.getElementById("themeToggle");
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      themeToggle.textContent = document.body.classList.contains("dark-mode")
+        ? "☀️ Light Mode"
+        : "🌙 Dark Mode";
+    });
+
+    // Simple Product Search Filter
+    const searchInput = document.getElementById("searchInput");
+    const tableRows = document.querySelectorAll("#productTable tr");
+
+    searchInput.addEventListener("keyup", function() {
+      const filter = this.value.toLowerCase();
+      tableRows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(filter) ? "" : "none";
+      });
+    });
+	  
+	  document.querySelectorAll("th").forEach(header => {
+  header.addEventListener("click", () => {
+    const table = header.closest("table");
+    const tbody = table.querySelector("tbody");
+    const index = Array.from(header.parentNode.children).indexOf(header);
+    const rows = Array.from(tbody.querySelectorAll("tr"));
+
+    // Toggle ascending/descending
+    const ascending = !header.classList.contains("asc");
+    document.querySelectorAll("th").forEach(h => h.classList.remove("asc", "desc"));
+    header.classList.add(ascending ? "asc" : "desc");
+
+    rows.sort((a, b) => {
+      const A = a.children[index].textContent.trim();
+      const B = b.children[index].textContent.trim();
+      return ascending
+        ? A.localeCompare(B, undefined, { numeric: true })
+        : B.localeCompare(A, undefined, { numeric: true });
+    });
+
+    rows.forEach(row => tbody.appendChild(row));
+  });
+});
+	  
+document.querySelectorAll('.view-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    const row = this.closest('tr');
+    const name = row.dataset.name;
+    const category = row.dataset.category;
+    const price = row.dataset.price;
+    const img = row.dataset.img;
+
+    // Populate modal fields
+    document.getElementById('modalName').textContent = name;
+    document.getElementById('modalCategory').textContent = category;
+    document.getElementById('modalPrice').textContent = price;
+    document.getElementById('modalImage').src = img;
+
+    // Show modal
+    const modal = new bootstrap.Modal(document.getElementById('productModal'));
+    modal.show();
+  });
+});
+</script>
+</body>
+</html>
